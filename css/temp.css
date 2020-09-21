@@ -1,0 +1,256 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	list-style: none;
+	text-decoration: none;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+h1.title{
+	margin-bottom: 20px;
+	color: #000000;
+	font-family: 'Allura';
+	text-transform: uppercase;
+/*	font-size: 38px;
+	word-spacing: 25px;
+    letter-spacing: 5px;*/
+   
+}
+
+
+
+p{
+	margin-bottom: 15px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #a9a9a9;
+}
+.Nav{
+	width: 100%;
+	height: 65px;
+	position: absolute;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.Logo a{
+	font-family: 'Allura', cursive;
+	font-size: 32px;
+	color: #ffffff;
+}
+
+.navbar_items ul{
+	display: flex;
+}
+
+.navbar_items ul li{
+	margin: 0 10px;
+}
+
+.navbar_items ul li a{
+	text-transform: uppercase;
+    color: #fff;
+}
+/* banner_image */
+.banner_image{
+	background: url('/images/download21.jpg') no-repeat top center;
+	background-size: cover;
+	width: 100%;
+	height: 600px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.banner_content{
+	text-align: center;
+	color: #fff;
+}
+
+.banner_content h1{
+	
+	line-height: 38px;
+	margin-bottom: 15px;
+}
+
+.banner_content h1 span{
+	color: #fff;
+}
+
+
+.slogan,
+.About,
+.Services,
+.Contact,
+.Blog{
+	text-align: center;
+	padding: 5% 10%;
+}
+/* Services  */
+.Services{
+	background: #f5f5f5;
+	
+}
+
+.diff_services {
+	margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.diff_services .diff_services_item {
+    width: 30%;
+}
+
+.diff_services .diff_services_item img {
+	width: 100%; 
+	border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% ;
+	
+	padding: 15px ;
+	
+	
+}
+
+.diff_services .diff_services_item h3 {
+    color: #444444;
+    
+}
+
+
+/*blog  padding: 0 auto 15px;
+margin-bottom: 25px auto 25px;*/
+.Blog{
+	
+	background: #f5f5f5;
+	
+}
+/* About us*/
+.About{
+	background: #f5f5f5;
+}
+
+
+/* Contact us */
+
+.Contact{
+	background: #f5f5f5;
+}
+
+.form_wrapper .form_input{
+	margin-bottom: 15px;
+	
+}
+
+.form_wrapper .form_input input[type="text"] .form_input[type="number"].form_input[type="email"]{
+	width: 250px;
+	padding: 12px 20px; 
+	border: 1px solid #ccc;
+}
+
+.form_wrapper .form_input textarea{
+	width: 250px;
+	padding: 12px 20px; 
+	height: 80px;
+	resize: none;
+	border: 1px solid  #ccc;
+}
+/* MAP */
+.mapouter{
+	margin-top: 15px;
+	background: #f5f5f5;
+}
+
+/* footer */
+.footer{
+	width: 100%;
+	background:  #f5f5f5;
+	padding: 20px 0;
+	justify-content: space-around;
+	display: flex;
+}
+
+
+.footer a{
+	padding: 8px;
+	color: black;
+}
+
+.footer ul{
+	color: black;
+	display: flex;
+}
+
+.footer ul li{
+	margin: 0 10px;
+}
+
+.footer ul li a{
+	text-transform: uppercase;
+    color: black;
+}
+
+
+@media (max-width: 720px){
+
+	.navbar{
+		height: auto;
+		flex-direction: column;
+	}
+
+	.logo{
+		margin-bottom: 25px;
+	}
+
+	.navbar_items ul{
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.navbar_items ul li{
+		margin-bottom:5px;
+	}
+
+	.banner_content{
+		margin-top: 35px;
+	}
+
+	.Services{
+		background: #f5f5f5;
+		
+	}
+	
+	.diff_services {
+		margin-top: 35px;
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	.diff_services .diff_services_item {
+		width: 30%;
+	}
+	
+	.diff_services .diff_services_item img {
+		width: 100%; 
+		border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% ;
+		
+		padding: 15px ;
+		
+		
+	}
+	
+	.diff_services .diff_services_item h3 {
+		color: #444444;
+		
+	}
+
+
+	.mapouter{
+		height: vh;
+		flex-direction: column;
+
+	}
+
+}
