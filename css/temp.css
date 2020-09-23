@@ -50,10 +50,30 @@ p{
 	margin: 0 10px;
 }
 
-.navbar_items ul li a{
-	text-transform: uppercase;
+.navbar_items ul li a {
+    display: inline-block;
+    text-transform: uppercase;
     color: #fff;
+    position: relative;
 }
+
+.navbar_items ul li a::after {
+     content: '';
+     position: absolute;
+     width: 100%;
+     transform: scaleX(1);
+     height: 2px;
+     bottom: 0;
+     left: 0;
+     background-color:#fff;
+     transform-origin: bottom left;
+     transition: transform .3s ease-in-out;
+ }
+
+.navbar_items ul li a:hover::after {
+     transform: scaleX(0);
+     transform-origin: bottom right;
+ }
 /* banner_image */
 .banner_image{
 	background: url('../images/download21.jpg') no-repeat ,top center;
@@ -86,35 +106,47 @@ p{
 .Services,
 .Contact,
 .Blog{
+	
 	text-align: center;
 	padding: 5% 10%;
 }
 /* Services  */
 .Services{
+	
 	background: #f5f5f5;
 	
 }
 
 .diff_services {
-	margin-top: 35px;
+    
+	/*width: 25%;
+	margin-top: 35px;*/
     display: flex;
     justify-content: space-between;
 }
 
-.diff_services .diff_services_item {
-    width: 30%;
+ .diff_services_item {
+	width: 25%; 
+	margin: 0px 0px 0px 20px;
+/*	float: left;*/
 }
 
-.diff_services .diff_services_item img {
+.diff_services ::after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+  
+
+.diff_services_item img {
 	width: 100%; 
 	border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% ;
-	
-	padding: 15px ;
+/*	padding: 15px ; */
 	
 	
 }
 
-.diff_services .diff_services_item h3 {
+.diff_services_item h3 {
     color: #444444;
     
 }
@@ -187,11 +219,44 @@ margin-bottom: 25px auto 25px;*/
 	margin: 0 10px;
 }
 
-.footer ul li a{
-	text-transform: uppercase;
+.navbar_items_footer {
+    text-transform: uppercase;
     color: black;
 }
 
+
+.navbar_items_footer :hover{
+    animation: navbar_items_footer  1s ease;
+    animation-iteration-count: 1;
+}
+
+@keyframes  navbar_items_footer 
+{
+    15%
+    {
+        transform: translateX(5px);
+    }
+    30%
+    {
+        transform: translateX(-5px);
+    }
+    50%
+    {
+        transform: translateX(3px);
+    }
+    65%
+    {
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        transform: translateX(2px);
+    }
+    100%
+    {
+        transform: translateX(0);
+    }
+}
 
 @media (max-width: 720px){
 
@@ -200,19 +265,21 @@ margin-bottom: 25px auto 25px;*/
 		flex-direction: column;
 	}
 
-	.logo{
+	.logo a{
 		
 		margin-bottom: 12px;
+		font-size: 12px;
 	}
 
 	.navbar_items ul{
+		padding-top: 40px;
 		flex-direction: row;
 		text-align: center;
 	}
 
-	.navbar_items ul li{
-		margin-top:2px;
-	}
+	/*.navbar_items ul li{
+		
+	}*/
 
 	.banner_image{
 		background: url('../images/download21.jpg') no-repeat ,top center;
@@ -227,11 +294,12 @@ margin-bottom: 25px auto 25px;*/
 	.banner_content{
 		text-align: center;
 		color: #fff;
+		
 	}
 	
 	.banner_content h1{
 		
-		line-height: 32px;
+		height: vh;
 		margin-bottom: auto;
 	}
 	
@@ -239,33 +307,22 @@ margin-bottom: 25px auto 25px;*/
 		color: #fff;
 	}
 
-	.diff_services {
-		margin-top: 35px;
-		display: flex;
-		justify-content: space-between;
-	}
+
+/* Services */	
+.diff_services_item{
+	width: 100%;
+	flex-direction: column;
+}
 	
-	.diff_services .diff_services_item {
-		width: 30%;
-	}
-	
-	.diff_services .diff_services_item img {
-		width: 100%; 
-		border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% ;
-		
-		padding: 15px ;
-		
-		
-	}
-	
-	.diff_services .diff_services_item h3 {
-		color: #444444;
-		
-	}
+ 	.blog .About .Contact{
+		flex-direction: column;
+	 }
 	
 
 	.mapouter{
-		height: vh;
+		max-height:vh;
+		max-width: auto;
+		padding-right: 80px;
 		flex-direction: column;
 
 	}
